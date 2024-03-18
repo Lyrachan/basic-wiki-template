@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "figaro", "~> 1.2"
+
+gem "markdown-rails", "~> 2.1"

@@ -22,7 +22,9 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   username: <%= ENV["local_db_user"] %>
-  password: <%= ENV["loca_db_password"] %>
+  password: <%= ENV["local_db_password"] %>
+  host: <%= ENV["local_db_host"] %>
+  port: <%= ENV["local_db_port"] %>
 
 development:
   <<: *default
