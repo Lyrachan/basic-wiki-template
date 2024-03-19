@@ -4,11 +4,11 @@ class PagesController < ApplicationController
   # GET /pages or /pages.json
   def index
     @pages = Page.all
-    @articles = Article.all
   end
 
   # GET /pages/1 or /pages/1.json
   def show
+    @articles = Page.find(params[:id]).articles
   end
 
   # GET /pages/new

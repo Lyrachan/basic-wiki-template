@@ -9,10 +9,10 @@
       <%= link_to "#{page.title}", page %>
     </p>
     <ul>
-      <%= link_to "Ver artículos", articles_path, class: "btn btn-primary text-white" %>
         <% page.articles.each do |article| %>
           <li>
-            <%= link_to "#{article.title}", article_path(page), class: "btn btn-primary text-white" %>
+            <%= link_to "#{article.title}", page_article_path(page, article), class: "btn btn-primary text-white" %>
+            <!-- < %= article.title %> -->
           </li>
         <% end %>
     </ul>

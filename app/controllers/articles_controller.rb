@@ -3,11 +3,14 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    # @articles = Article.all
+    @articles = Page.find(params[:page_id]).articles
   end
 
   # GET /articles/1 or /articles/1.json
   def show
+    @page = Page.find(params[:page_id])
+    @article = @page.articles.find(params[:id])
   end
 
   # GET /articles/new
