@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1 or /pages/1.json
   def show
-    @articles = Page.find(params[:id]).articles
+    # @articles = Page.find(params[:id]).articles
   end
 
   # GET /pages/new

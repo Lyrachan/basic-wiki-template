@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles or /articles.json
   def index
     # @articles = Article.all
+    @page = Page.find(params[:page_id])
     @articles = Page.find(params[:page_id]).articles
   end
 
@@ -15,11 +16,14 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
+    @page = Page.find(params[:page_id])
     @article = Article.new
   end
 
   # GET /articles/1/edit
   def edit
+    @page = Page.find(params[:page_id])
+    @article = @page.articles.find(params[:id])
   end
 
   # POST /articles or /articles.json
@@ -28,7 +32,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
+        format.html { redirect_to page_articles_path, notice: "Artículo creado" }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +45,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to article_url(@article), notice: "Article was successfully updated." }
+        format.html { redirect_to page_articles_path, notice: "Artículo actualizado" }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +59,7 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
+      format.html { redirect_to page_articles_path, notice: "Artículo borrado" }
       format.json { head :no_content }
     end
   end

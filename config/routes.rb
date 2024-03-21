@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages # It's the same as adding ", shallow: true" to resources :articles
+  # resources :pages # It's the same as adding ", shallow: true" to resources :articles
   resources :pages do
     resources :articles
   end
