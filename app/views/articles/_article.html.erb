@@ -1,17 +1,10 @@
 <div id="<%= dom_id article %>">
   <p>
-    <strong>Title:</strong>
-    <%= article.title %>
+    <h2><%= article.title %></h1>
   </p>
 
   <p>
-    <strong>Content:</strong>
-    <%= article.content %>
-  </p>
-
-  <p>
-    <strong>Page:</strong>
-    <%= article.page_id %>
+    <%= simple_format(article.content) %>
   </p>
 
 </div>

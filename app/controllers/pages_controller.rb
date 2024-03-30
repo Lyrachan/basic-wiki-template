@@ -3,7 +3,8 @@ class PagesController < ApplicationController
 
   # GET /pages or /pages.json
   def index
-    @pages = Page.all
+    # @pages = Page.all # Originalmente estaba así
+    @pages = Page.all.order(:id) # El order(:id) permite ordenar por jerarquía de id y no por fecha
   end
 
   # GET /pages/1 or /pages/1.json

@@ -1,10 +1,10 @@
 <div id="<%= dom_id page %>">
   <p>
-    <h1><%= page.title %></h1>
+    <h2><%= page.title %></h1>
   </p>
 
   <p>
-    <%= page.content %>
+    <%= simple_format(page.content) %>
   </p>
 
 </div>

@@ -2,9 +2,12 @@
 
 <h1>Pages</h1>
 
+<!-- Renders _pages.html.md -->
+<!-- <div> < %= render :partial => 'pages' %>  </div> -->
+
 <div id="pages">
   <% @pages.each do |page| %>
-    <!-- <%= render page %> -->
+    <!-- < %= render page %> -->
     <p>
       <%= link_to "#{page.title}", page %>
     </p>
